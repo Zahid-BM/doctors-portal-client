@@ -1,12 +1,13 @@
 import React from 'react';
-import clock from '../../assets/icons/clock.svg';
 
-const InfoCard = () => {
+const InfoCard = ({ img, cardTitle, bgColor }) => {
     return (
-        <div class="card lg:card-side bg-base-100 shadow-xl bg-accent">
-            <figure><img className='ml-4' src={clock} alt="Album" /></figure>
+        <div class={`card lg:card-side bg-base-100 shadow-xl bg-accent text-white ${bgColor}`}>
+            <figure className='m-4'>
+                <img src={img} alt="Album" />
+            </figure>
             <div class="card-body">
-                <h2 class="card-title">New album is released!</h2>
+                <h2 class="card-title">{cardTitle}</h2>
                 <p>Click the button to listen on Spotiwhy app.</p>
             </div>
         </div>
