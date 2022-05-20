@@ -13,13 +13,13 @@ const Services = () => {
             img: fluoride
         },
         {
-            _id: 1,
+            _id: 2,
             name: 'Cavity Filling',
             description: 'This is a very good treatment without any harm. Get treated and fell well.',
             img: cavity
         },
         {
-            _id: 1,
+            _id: 3,
             name: 'Teeth Whitening',
             description: 'This is a very good treatment without any harm. Get treated and fell well.',
             img: whitening
