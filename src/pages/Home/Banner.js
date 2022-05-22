@@ -1,7 +1,7 @@
 import React from 'react';
 import chair from '../../assets/images/chair.png'
 import PrimaryButton from '../shared/PrimaryButton';
-import bg from '../../assets/images/bg.png'
+import bg from '../../assets/images/bg.png';
 
 const Banner = () => {
     return (

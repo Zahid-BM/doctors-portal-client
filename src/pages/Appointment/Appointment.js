@@ -1,9 +1,12 @@
 import React from 'react';
+import Footer from '../shared/Footer';
+import AppointmentBanner from './AppointmentBanner';
 
 const Appointment = () => {
     return (
         <div>
-            <h1>This is Appointment Page</h1>
+            <AppointmentBanner></AppointmentBanner>
+            <Footer></Footer>
         </div>
     );
 };
