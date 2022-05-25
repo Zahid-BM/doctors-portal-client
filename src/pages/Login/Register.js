@@ -36,17 +36,17 @@ const Register = () => {
         <div className='flex h-screen justify-center items-center'>
             <div className='card w-96 shadow-2xl '>
                 <h1 className='text-center pt-8 font-bold text-2xl' >User Registration</h1>
-                <div class="card-body">
+                <div className="card-body">
                     <form autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
 
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Your Name</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Your Name</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder="Input Your Full Name"
-                                class="input input-bordered w-full max-w-xs"
+                                className="input input-bordered w-full max-w-xs"
                                 {...register("name",
                                     {
                                         required: {
@@ -55,17 +55,17 @@ const Register = () => {
                                         }
 
                                     })} />
-                            <label class="label">
-                                {errors.name?.type === 'required' && <span class="label-text-alt text-red-600">{errors?.name?.message}</span>}
+                            <label className="label">
+                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-600">{errors?.name?.message}</span>}
 
                             </label>
-                            <label class="label">
-                                <span class="label-text">Your Email</span>
+                            <label className="label">
+                                <span className="label-text">Your Email</span>
                             </label>
                             <input
                                 type="email"
                                 placeholder="Input Your email address"
-                                class="input input-bordered w-full max-w-xs"
+                                className="input input-bordered w-full max-w-xs"
                                 {...register("email",
                                     {
                                         required: {
@@ -77,17 +77,17 @@ const Register = () => {
                                             message: 'Provide a valid email address'
                                         }
                                     })} />
-                            <label class="label">
-                                {errors.email?.type === 'required' && <span class="label-text-alt text-red-600">{errors?.email?.message}</span>}
-                                {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-600">{errors?.email?.message}</span>}
+                            <label className="label">
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-600">{errors?.email?.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-600">{errors?.email?.message}</span>}
                             </label>
-                            <label class="label">
-                                <span class="label-text">Password</span>
+                            <label className="label">
+                                <span className="label-text">Password</span>
                             </label>
                             <input
                                 type="password"
                                 placeholder="Input Your password"
-                                class="input input-bordered w-full max-w-xs"
+                                className="input input-bordered w-full max-w-xs"
                                 {...register("password",
                                     {
                                         required: {
@@ -99,9 +99,9 @@ const Register = () => {
                                             message: 'Password must be at least 6 characters'
                                         }
                                     })} />
-                            <label class="label">
-                                {errors.password?.type === 'required' && <span class="label-text-alt text-red-600">{errors?.password?.message}</span>}
-                                {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-600">{errors?.password?.message}</span>}
+                            <label className="label">
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-600">{errors?.password?.message}</span>}
+                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-600">{errors?.password?.message}</span>}
                             </label>
                             <input className='btn' type="submit" value={'Register'} />
                             <small className='text-red-600 my-2'>{error?.message || error1?.message || error2?.message}</small>
@@ -109,9 +109,9 @@ const Register = () => {
                         </div>
 
                     </form>
-                    <div class="divider">OR</div>
-                    <button onClick={() => signInWithGoogle()} class="btn btn-outline">Continue with Google</button>
-                    <button class="btn btn-outline">Continue with GitHub</button>
+                    <div className="divider">OR</div>
+                    <button onClick={() => signInWithGoogle()} className="btn btn-outline">Continue with Google</button>
+                    <button className="btn btn-outline">Continue with GitHub</button>
 
                 </div>
             </div>
