@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -14,15 +14,22 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+    const [updateProfile, updating, error2] = useUpdateProfile(auth);
+
+
+
+
     if (user || user1) {
         console.log(user || user1)
     };
-    if (loading1 || loading) {
+    if (loading1 || loading || updating) {
         return <Loading></Loading>
     }
-    const onSubmit = data => {
-        console.log(data.email)
-        createUserWithEmailAndPassword(data.email, data.password)
+    const onSubmit = async data => {
+        await createUserWithEmailAndPassword(data.email, data.password)
+        await updateProfile({
+            displayName: data.name,
+        })
         reset();
     }
     return (
@@ -97,7 +104,7 @@ const Register = () => {
                                 {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-600">{errors?.password?.message}</span>}
                             </label>
                             <input className='btn' type="submit" value={'Register'} />
-                            <small className='text-red-600 my-2'>{error?.message || error1?.message}</small>
+                            <small className='text-red-600 my-2'>{error?.message || error1?.message || error2?.message}</small>
                             <small>Already have an account ? <Link className='text-secondary' to='/login'>Visit login page.</Link></small>
                         </div>
 
